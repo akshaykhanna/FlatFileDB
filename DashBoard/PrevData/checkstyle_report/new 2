@@ -1,0 +1,34 @@
+I have coded similar thing to auto download arround 60+ pdf files from a website and  similarly coded for downloading all videos of particular  channel from Youtube.
+I can do any kind of desktop GUI and web browser automation.
+Further the logic/ algo which I think is required for your problem is:-
+- Store all the words for which you want pronunciation audio in a file.
+- Then automation script  will parse the file and one by one will search that words on korean website for audio.
+- On finding the word it will click on the button to download the audio for it and so on will be done for every word in file
+- Whole of this process would be automated with no need of human intervention.
+So basically automation script would be like provide words for input and get there  pronunciation audio in a folder as output..
+
+I have worked on similar scenario in my company in which we have to manually enter data to our website via HTML forms from PDF and word files. So during doing so we had developed some tools to automate this process using mage processing and GUI automation 
+Further right now I am working on such product in company that can automate most of computer related manual works using AI, ML and cognitive learning.
+Therefore using my experience in handling such problem set as yours and with the aid of these auto scripts and tools I would be able accomplish your task in 4-5 days.
+The algp/ logic  I thought for accomplishing your task would be:-
+-Auto open pdf one by one using script
+- Copy data from one page and and auto write to text file 
+- Then auto move to  next page and then to next pdf and will follow the same procedure as above in them. of writing them to text file.
+Further if there would any issue in execution auto scripts then don't worry as I have time and some of friends with me to accomplish this task manually.
+I may  be new to freelancing but I am good at what i do.
+So don't worry , take a chance and you will not regret.
+Thanks
+Akshay
+
+
+In my company I have done similar browser automation to fill data in HTML forms of our website from data present in text dumps. I am thinking of applying similar approach for your problem set.
+The logic/algo so far I thought for handling your problem set is:-
+- auto open webpage one by one
+- copy specified data and and auto write them to text file.
+So with the help of experience in handling web scraping task like yours and with auto tools & scripts I would be able to accomplish your task.in a Day.
+Further if there would any issue in execution auto scripts then don't worry as I have time and some of friends with me to accomplish this task manually.
+I may  be new to freelancing but I am good at what i do.
+So don't worry , take a chance and you will not regret.
+Thanks
+Akshay
+Akshay

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<jobs>
+	<job id="1" name="dot">
+		<username>d814634</username>
+		<password>Infosys123</password>
+	</job>
+	<job id="2" name="a4bizz">
+		<username>d814634</username>
+		<password>Infosys123</password>
+	</job>
+	<job id="3" name="ipsol">
+		<username>d814634</username>
+		<password>Infosys123</password>
+	</job>
+	<job id="4" name="tbb">
+		<username>d814634</username>
+		<password>Infosys!2345</password>
+	</job>
+	<job id="5" name="sfm">
+		<username>admin</username>
+		<password>T3lstr4!23</password>
+	</job>
+	<job id="6" name="dbsfm">
+		<username>administrator</username>
+		<password>T3lstr4!23</password>
+	</job>
+</jobs>
