@@ -16,6 +16,9 @@
         .auto-style3 {
             text-align: center;
         }
+        .auto-style4 {
+            height: 23px;
+        }
     </style>
 </head>
 <body>
@@ -52,9 +55,9 @@
                 </td>
             </tr>
             <tr>
-                <td>&nbsp;</td>
-                <td colspan="3">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style4"></td>
+                <td colspan="3" class="auto-style4"></td>
+                <td class="auto-style4"></td>
             </tr>
             <tr>
                 <td>&nbsp;</td>
@@ -81,12 +84,14 @@
             </tr>
             <tr>
                 <td>&nbsp;</td>
-                <td colspan="2" class="auto-style3">
+                <td class="auto-style3">
                     <asp:Button ID="btPrev" runat="server" OnClick="btPrev_Click" Text="&lt;Prev" />
                 </td>
-                <td colspan="2" class="auto-style3">
+                <td class="auto-style3">
                     <asp:Button ID="btnNextFile" runat="server" OnClick="btnNextFile_Click" Text=" Next&gt;" />
                 </td>
+                <td colspan="2" class="auto-style3">
+                    &nbsp;</td>
             </tr>
         </table>
     

@@ -22,7 +22,8 @@ namespace DashBoard
                 if (!IsPostBack)
                 {
                     GetFilesFromFolderInListBox();
-                    //addNamesToFiles();
+                    
+                    //display heading according to type file to be uploaded
                     lbHeading.Text = "Upload or choose " + fileNamesList[count] + " File";
                 }
             }
@@ -33,21 +34,18 @@ namespace DashBoard
 
         }
 
-        //private void addNamesToFiles()
-        //{
-        //    fileNamesList= 
-
-        //}
-
         void GetFilesFromFolderInListBox()
         {
             try
             {
+                //add all in files in particular type of folder in list box
                 string[] fileEntries = Directory.GetFiles(pathSource+ fileNamesList[count]+@"\");
                 ListBox1.Items.Clear();
+                String temp;
                 foreach (string fileName in fileEntries)
                 {
-                    ListBox1.Items.Add(fileName.ToString());
+                    temp= fileName.ToString().Substring(fileName.LastIndexOf("\\")+1);
+                    ListBox1.Items.Add(temp);
                      
                 }
                 //to display files in destination folder
@@ -58,11 +56,16 @@ namespace DashBoard
                 //    lbFinalItems.Items.Add(fileName.ToString());
                 //}
 
+                //add name of file moved in list box 2
                 lbFinalItems.Items.Clear();
                 foreach (string fileName in filesAdded)
                 {
                     if(fileName!=null && fileName.Length>0)
-                    lbFinalItems.Items.Add(fileName.ToString());
+                    {
+                        temp = fileName.ToString().Substring(fileName.LastIndexOf("\\") + 1);
+                        lbFinalItems.Items.Add(temp);
+                    }
+                   
                 }
             }
             catch (Exception er)
@@ -83,7 +86,6 @@ namespace DashBoard
             else
                 // Notify the user that a file was not uploaded.
                 lbMsg.Text = "You did not browse a file to upload.";
-
             
         }
 
@@ -91,8 +93,17 @@ namespace DashBoard
         {
             try
             {
-                String savePath = pathSource + postedFile.ToString();
-                FileUpload1.SaveAs(savePath);
+                String path = pathSource + fileNamesList[count] + @"\";
+                String outputFileName = path  + fileNamesList[count] + "_"+ DateTime.Now.ToString().Replace(":", "") + ".xml";
+                
+                String savePath = path+ postedFile.ToString();
+                //FileUpload1.SaveAs(savePath);
+                FileUpload1.SaveAs(outputFileName);
+                //File.Delete(newFileName); // Delete the existing file if exists
+                lbMsg.Text = savePath + " - " + outputFileName;
+                ////File.Move(savePath,outputFileName);
+                //File.Copy(savePath, outputFileName);
+                //File.Delete(savePath);
             }
             catch (Exception er)
             {
@@ -104,9 +115,7 @@ namespace DashBoard
         {
             try
             {
-                //var temp = ListBox1.SelectedItem;
-                //lbMsg.Text = "Data "+ListBox1.se
-                //lbMsg.Text = "Data " + ListBox1.Items[ListBox1.SelectedIndex];
+                //get file selected in list box 1
                 String fileToMoveWithpath="";
                 for (int i = 0; i < ListBox1.Items.Count; i++)
                 {
@@ -116,11 +125,12 @@ namespace DashBoard
                         fileToMoveWithpath = ListBox1.Items[i].Text.ToString();
                     }
                 }
-                
+                fileToMoveWithpath = pathSource + fileNamesList[count] + @"\"+fileToMoveWithpath;
                 // To copy a file to another location and 
                 // overwrite the destination file if it already exists.
                 System.IO.File.Copy(fileToMoveWithpath, pathDestination+ fileNamesList[count]+".xml", true);
                 filesAdded[count] = fileToMoveWithpath.ToString();
+                GetFilesFromFolderInListBox();
             }
             catch (Exception er)
             {
@@ -163,14 +173,5 @@ namespace DashBoard
                 lbMsg.Text = er.Message;
             }
         }
-
-
-        //protected void ListBox1_SelectedIndexChanged1(object sender, EventArgs e)
-        //{
-        //    // Get the currently selected item in the ListBox.
-        //    curItem = ListBox1.SelectedItem.ToString();
-        //    lbMsg.Text = "papu " + curItem;
-        //    // Find the string in ListBox2.
-        //}
     }
 }
